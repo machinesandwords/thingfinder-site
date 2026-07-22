@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — ThingFinder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ffbd59;
+      --pink: #edcae5;
+      --magenta: #b00489;
+      --lime: #ccf505;
+      --dark: #2d2d2d;
+      --header-bg: #545454;
+      --text: #1a1a1a;
+      --muted: #555;
+      --bg: #fafafa;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: #545454;
+      padding: 32px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .icon-grid span {
+      display: block;
+    }
+
+    .icon-grid span:nth-child(1) { background: var(--orange); }
+    .icon-grid span:nth-child(2) { background: var(--pink); }
+    .icon-grid span:nth-child(3) { background: var(--magenta); }
+    .icon-grid span:nth-child(4) { background: var(--lime); }
+
+    header h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      color: #fff;
+      letter-spacing: 0.01em;
+    }
+
+    header h1 span {
+      color: var(--orange);
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--dark);
+      margin: 40px 0 12px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      margin-right: 10px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+
+    h2:nth-of-type(1)::before { background: var(--orange); }
+    h2:nth-of-type(2)::before { background: var(--pink); }
+    h2:nth-of-type(3)::before { background: var(--magenta); }
+    h2:nth-of-type(4)::before { background: var(--lime); }
+    h2:nth-of-type(5)::before { background: var(--orange); }
+    h2:nth-of-type(6)::before { background: var(--pink); }
+    h2:nth-of-type(7)::before { background: var(--magenta); }
+    h2:nth-of-type(8)::before { background: var(--lime); }
+
+    p { margin-bottom: 16px; color: var(--text); }
+
+    ul {
+      margin: 0 0 16px 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    a { color: var(--magenta); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .contact-box {
+      background: var(--dark);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 48px;
+    }
+
+    .contact-box p {
+      color: #ccc;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .contact-box a {
+      color: var(--orange);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 32px 24px;
+      border-top: 1px solid #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="icon-grid">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <h1>Thing<span>Finder</span></h1>
+</header>
+
+<div class="container">
+
+  <div class="meta">
+    <strong>Privacy Policy</strong> &nbsp;·&nbsp; Effective date: June 1, 2026 &nbsp;·&nbsp; Last updated: June 1, 2026
+  </div>
+
+  <p>ThingFinder is a personal organization app that helps you remember where you put your things. This policy explains what information we collect, how we use it, and your rights regarding your data. We keep it simple because we don't do anything complicated with your information.</p>
+
+  <h2>Information we collect</h2>
+  <p>When you create an account and use ThingFinder, we collect:</p>
+  <ul>
+    <li><strong>Email address</strong> — used to create and access your account</li>
+    <li><strong>Password</strong> — stored securely by Firebase Authentication; we never see your plain-text password</li>
+    <li><strong>Photos</strong> — images you choose to attach to items you add to the app, stored in Firebase Storage</li>
+    <li><strong>Item data</strong> — the names, rooms, and locations you enter for your things, stored in Firestore</li>
+    <li><strong>Account preferences</strong> — settings like room names and premium status</li>
+  </ul>
+
+  <h2>How we use your information</h2>
+  <p>We use your information solely to provide the ThingFinder service:</p>
+  <ul>
+    <li>To authenticate you and secure your account</li>
+    <li>To store and display your items, rooms, and photos</li>
+    <li>To process in-app purchases and manage premium features</li>
+    <li>To send password reset emails when requested</li>
+  </ul>
+  <p>We do not use your data for advertising, profiling, or any purpose beyond operating the app.</p>
+
+  <h2>Data storage and security</h2>
+  <p>Your data is stored using Google Firebase, which provides industry-standard encryption in transit and at rest. Access to your data is restricted to your account only — other users cannot read or write your items. Passwords are managed entirely by Firebase Authentication and are never stored or visible to us.</p>
+
+  <h2>Data sharing</h2>
+  <p>We do not sell, rent, or share your personal information with third parties. The only exception is Google Firebase, which is the infrastructure provider that stores and processes your data on our behalf under Google's own privacy and security standards.</p>
+
+  <h2>Your rights and choices</h2>
+  <p>You have full control over your data:</p>
+  <ul>
+    <li><strong>Access</strong> — all your data is visible to you within the app</li>
+    <li><strong>Deletion</strong> — you can permanently delete your account and all associated data from the Account screen inside the app</li>
+    <li><strong>Export</strong> — contact us if you need a copy of your data</li>
+  </ul>
+
+  <h2>Children's privacy</h2>
+  <p>ThingFinder is not directed at children under the age of 13, and we do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it promptly.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If we make material changes to this privacy policy, we will update the effective date above and notify users through the app. Continued use of ThingFinder after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this privacy policy or your data, please reach out:</p>
+
+  <div class="contact-box">
+    <p>ThingFinder support</p>
+    <p><a href="mailto:support@thingfinder.app">support@thingfinder.app</a></p>
+    <p style="margin-top: 12px; font-size: 13px;">thingfinder.app</p>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 ThingFinder &nbsp;·&nbsp; <a href="/">thingfinder.app</a>
+</footer>
+
+</body>
+</html>

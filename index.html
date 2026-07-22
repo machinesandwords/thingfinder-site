@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThingFinder — Snap, tag, and find your things</title>
+  <meta name="description" content="ThingFinder helps you remember where you put everything. Snap a photo, tag a location, find it instantly.">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ffbd59;
+      --pink: #edcae5;
+      --magenta: #b00489;
+      --lime: #ccf505;
+      --dark: #2d2d2d;
+      --mid: #545454;
+      --text: #1a1a1a;
+      --muted: #666;
+      --bg: #fafafa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    nav {
+      background: var(--mid);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .icon-grid span { display: block; }
+    .icon-grid span:nth-child(1) { background: var(--orange); }
+    .icon-grid span:nth-child(2) { background: var(--pink); }
+    .icon-grid span:nth-child(3) { background: var(--magenta); }
+    .icon-grid span:nth-child(4) { background: var(--lime); }
+
+    .nav-logo h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .nav-logo h1 span { color: var(--orange); }
+
+    nav a.nav-link {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    nav a.nav-link:hover { color: #fff; }
+
+    .hero {
+      background: var(--dark);
+      padding: 80px 24px 96px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 96px;
+      height: 96px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 0 auto 32px;
+    }
+
+    .hero-icon span { display: block; }
+    .hero-icon span:nth-child(1) { background: var(--orange); }
+    .hero-icon span:nth-child(2) { background: var(--pink); }
+    .hero-icon span:nth-child(3) { background: var(--magenta); }
+    .hero-icon span:nth-child(4) { background: var(--lime); }
+
+    .hero h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: clamp(36px, 6vw, 56px);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 span { color: var(--orange); }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .store-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .store-btn:hover { background: rgba(255,255,255,0.18); }
+
+    .store-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    .store-btn small {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      opacity: 0.7;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .features {
+      padding: 80px 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .features h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 48px;
+      color: var(--dark);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #ebebeb;
+    }
+
+    .feature-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h4 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .feature-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .premium-strip {
+      background: var(--magenta);
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .premium-strip h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .premium-strip p {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+
+    .premium-badge {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--dark);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 10px 28px;
+      border-radius: 100px;
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="icon-grid">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <h1>Thing<span>Finder</span></h1>
+  </a>
+  <a class="nav-link" href="/privacy">Privacy Policy</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-icon">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <h2>Snap, tag, and<br><span>find your things</span></h2>
+  <p>Stop losing track of where you put stuff. ThingFinder lets you photo, tag, and instantly locate anything in your home.</p>
+  <div class="store-buttons">
+    <a class="store-btn" href="#">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      <div>
+        <small>Download on the</small>
+        App Store
+      </div>
+    </a>
+    <a class="store-btn" href="#">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.76c.3.17.64.22.97.15l.09-.05 11.04-6.37-2.35-2.35-9.75 8.62zm-1.1-20.37A1.99 1.99 0 002 4.56v14.88c0 .46.16.88.42 1.22l.07.08 8.34-8.34v-.2L2.08 3.39zm17.58 7.09-2.5-1.44-2.61 2.61 2.61 2.61 2.52-1.45c.72-.41.72-1.09-.02-1.33zm-16.5 9.79 9.38-9.37-2.35-2.35L1.15 18.8c.34.44.86.72 1.43.72.2 0 .4-.04.58-.25z"/></svg>
+      <div>
+        <small>Get it on</small>
+        Google Play
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="features">
+  <h3>Everything has a place</h3>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-dot" style="background:#ffbd59"></div>
+      <h4>Snap a photo</h4>
+      <p>Take a picture of anything — a box, a drawer, a shelf — and attach it to your item so you always know exactly what you're looking for.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-dot" style="background:#edcae5"></div>
+      <h4>Tag a location</h4>
+      <p>Organize by room and specific location. "Garage, top shelf left" is a lot easier to remember when ThingFinder remembers it for you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-dot" style="background:#b00489"></div>
+      <h4>Find it instantly</h4>
+      <p>Search your entire home in seconds. No more opening every drawer or asking everyone in the house where something went.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-dot" style="background:#ccf505"></div>
+      <h4>Your rooms, your way</h4>
+      <p>Set up the rooms that match your home. Add as many locations as you need and keep everything organized exactly how you think about it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="premium-strip">
+  <h3>Go premium, once</h3>
+  <p>Unlock unlimited things, a hidden folder for private items, and priority support — with a single one-time purchase. No subscription.</p>
+  <div class="premium-badge">One-time purchase · $9.99</div>
+</section>
+
+<footer>
+  <p>&copy; 2026 ThingFinder &nbsp;·&nbsp; <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:support@thingfinder.app">support@thingfinder.app</a></p>
+</footer>
+
+</body>
+</html>

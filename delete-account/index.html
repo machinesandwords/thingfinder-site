@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — ThingFinder</title>
+  <meta name="description" content="How to delete your ThingFinder account and associated data.">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #ffbd59;
+      --pink: #edcae5;
+      --magenta: #b00489;
+      --lime: #ccf505;
+      --dark: #2d2d2d;
+      --mid: #545454;
+      --text: #1a1a1a;
+      --muted: #666;
+      --bg: #fafafa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    nav {
+      background: var(--mid);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .icon-grid span { display: block; }
+    .icon-grid span:nth-child(1) { background: var(--orange); }
+    .icon-grid span:nth-child(2) { background: var(--pink); }
+    .icon-grid span:nth-child(3) { background: var(--magenta); }
+    .icon-grid span:nth-child(4) { background: var(--lime); }
+
+    .nav-logo h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .nav-logo h1 span { color: var(--orange); }
+
+    nav a.nav-link {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+
+    nav a.nav-link:hover { color: #fff; }
+
+    .page-hero {
+      background: var(--dark);
+      padding: 56px 24px 64px;
+      text-align: center;
+    }
+
+    .page-hero h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: clamp(30px, 5vw, 44px);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .page-hero h2 span { color: var(--orange); }
+
+    .page-hero p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .content {
+      padding: 64px 24px 96px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .step-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #ebebeb;
+    }
+
+    .step-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    .step-card h4 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .step-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .step-card a {
+      color: var(--magenta);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .step-card a:hover { text-decoration: underline; }
+
+    .content h3 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .content > p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="icon-grid">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <h1>Thing<span>Finder</span></h1>
+  </a>
+  <a class="nav-link" href="/privacy">Privacy Policy</a>
+</nav>
+
+<section class="page-hero">
+  <h2>Delete your <span>account</span></h2>
+  <p>Two ways to remove your ThingFinder account and all associated data.</p>
+</section>
+
+<section class="content">
+  <div class="step-grid">
+    <div class="step-card">
+      <div class="step-dot" style="background:#ffbd59"></div>
+      <h4>In the app</h4>
+      <p>Open ThingFinder, go to <strong>Account</strong>, and select <strong>Delete Account</strong>. This immediately and permanently removes your account and all associated data, including saved items and photos.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-dot" style="background:#b00489"></div>
+      <h4>Without the app</h4>
+      <p>Email <a href="mailto:support@thingfinder.app">support@thingfinder.app</a> from the address associated with your account and request deletion. We'll process your request within 30 days.</p>
+    </div>
+  </div>
+
+  <h3>What gets deleted</h3>
+  <p>Deleting your account removes your profile, saved items, uploaded photos, and any other data associated with your account from our systems.</p>
+</section>
+
+<footer>
+  <p>&copy; 2026 ThingFinder &nbsp;·&nbsp; <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:support@thingfinder.app">support@thingfinder.app</a></p>
+</footer>
+
+</body>
+</html>
